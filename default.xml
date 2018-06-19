@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- You can have as many remote repositories as you like -->
 
-  <remote name="yocto" fetch="git://git.yoctoproject.org" />
-  <remote name="mender" fetch="git://github.com/mendersoftware" />
-  <remote name="oe" fetch="git://git.openembedded.org" />
-  <remote name="qt5" fetch="git://github.com/meta-qt5" />
-  <remote name="imx7" fetch="git://git.toradex.com" />
-  <remote name="freescale" fetch="git://github.com/Freescale" />
-  <!-- List all the repositories you want to fetch -->
-  <!-- "name": git repository's name on hosting server
-       "remote": the remote host from above (if not the default)
-       "revision": commitish to checkout (if not the default)
-       "path": directory where git repository gets cloned/synced -->
+  <default revision="rocko"/>
 
+  <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
+  <remote fetch="git://github.com/openembedded" name="openembedded"/>
+  <remote fetch="git://git.toradex.com" name="toradex"/>
+  <remote fetch="git://github.com/mendersoftware" name="mender"/>
+  <remote fetch="git://github.com/meta-qt5" name="qt5"/>
+  <remote fetch="git://github.com" name="github"/>
+  <remote fetch="git://github.com/alfrunes" name="alfrunes"/>
+  
+  <project name="poky" path="poky" revision="rocko" remote="yocto" />
+  <project name="meta-openembedded" path="poky/meta-openembedded" revision="rocko" remote="openembedded" />
 
-  <project name="poky" revision="refs/heads/rocko" remote="yocto" />
-  <project name="meta-mender" revision="refs/heads/rocko" remote="mender" />
+  <project name="meta-freescale" path="poky/meta-freescale" revision="rocko" remote="yocto"/>
+  <project name="Freescale/meta-freescale-3rdparty" path="poky/meta-freescale-3rdparty" revision="rocko" remote="github"/>
+  <project name="meta-toradex-nxp" path="poky/meta-toradex" revision="master" remote="toradex"/>
+  <project name="meta-toradex-nxp" path="poky/meta-toradex-nxp" revision="rocko" remote="toradex"/>
+  <project name="meta-toradex-bsp-common" path="poky/meta-toradex-bsp-common" revision="rocko" remote="toradex"/>
+  <project name="meta-fsl-arm" path="poky/meta-fsl-arm" revision="master" remote="yocto" />
 
-  <project name="meta-openembedded" revision="refs/heads/rocko"  remote="oe" path="poky/meta-openembedded" />
+  <project name="meta-mender" path="poky/meta-mender" revision="rocko" remote="mender" />
 
-  <project name="meta-qt5" revision="refs/heads/rocko"  remote="qt5" path="poky/meta-qt5" />
-
-  <project name="meta-freescale" revision="refs/heads/rocko" remote="yocto" path="poky/meta-freescale" />
-  <project name="meta-freescale-3rdparty" revision="refs/heads/rocko" remote="freescale" path="poky/meta-fsl-arm-extra" />
-
-  <project name="meta-toradex-nxp.git" revision="refs/heads/rocko" remote="imx7" path="poky/meta-toradex-nxp" />
-  <project name="meta-toradex-bsp-common.git" revision="refs/heads/rocko" remote="imx7" path="poky/meta-toradex-bsp-common" />
-
+  <project name="meta-qt5" path="poky/meta-qt5" revision="rocko" remote="qt5" />
+  <project name="meta-hosted-mender-login" path="poky/meta-hosted-mender-login" revision="master" remote="alfrunes" />
 </manifest>
 
