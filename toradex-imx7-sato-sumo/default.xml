@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <default revision="sumo"/>
+
+  <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
+  <remote fetch="git://github.com/openembedded" name="openembedded"/>
+  <remote fetch="git://git.toradex.com" name="toradex"/>
+  <remote fetch="git://github.com/mendersoftware" name="mender"/>
+  <remote fetch="git://github.com/meta-qt5" name="qt5"/>
+  <remote fetch="git://github.com" name="github"/>
+  <remote fetch="git://github.com/alfrunes" name="alfrunes"/>
+  
+  <project name="poky" path="poky" revision="sumo" remote="yocto" />
+  <project name="meta-openembedded" path="poky/meta-openembedded" revision="sumo" remote="openembedded" />
+
+  <project name="meta-freescale" path="poky/meta-freescale" revision="sumo" remote="yocto"/>
+  <project name="Freescale/meta-freescale-3rdparty" path="poky/meta-freescale-3rdparty" revision="sumo" remote="github"/>
+  <project name="meta-toradex" path="poky/meta-toradex" revision="master" remote="toradex"/>
+  <project name="meta-toradex-nxp" path="poky/meta-toradex-nxp" revision="master" remote="toradex"/>
+  <project name="meta-toradex-bsp-common" path="poky/meta-toradex-bsp-common" revision="master" remote="toradex"/>
+  <project name="meta-mender" path="poky/meta-mender" revision="master" remote="mender" />
+
+  <project name="meta-qt5" path="poky/meta-qt5" revision="sumo" remote="qt5" />
+  <project name="meta-hosted-mender-login" path="poky/meta-hosted-mender-login" revision="master" remote="alfrunes" />
+</manifest>
+
